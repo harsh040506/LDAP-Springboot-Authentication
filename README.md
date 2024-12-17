@@ -15,8 +15,8 @@ This application demonstrates LDAP (Lightweight Directory Access Protocol) authe
 
 1. **Clone the Repository**:
    ```bash
-   git clone <[repository-url](https://github.com/harsh040506/LDAP-Springboot-Authentication.git)>
-   cd <[repository-folder](https://github.com/harsh040506/LDAP-Springboot-Authentication/tree/main/LdapAuthentication)>
+   git clone https://github.com/harsh040506/LDAP-Springboot-Authentication.git
+   cd LDAP-Springboot-Authentication/LdapAuthentication
    ```
 
 2. **Build the Application**:
@@ -33,14 +33,14 @@ This application demonstrates LDAP (Lightweight Directory Access Protocol) authe
 
 4. **Access the Application**:
    Open your web browser and navigate to:
-   ```
+   ```bash
    http://localhost:8080/
    ```
 
 ## Testing the Application
 To log in, use the following credentials:
 
-- **Username**: Achilles Pelides
+- **Username**: Achilles Pelides  
 - **Password**: Achilles.Pelides
 
 ## Notes
@@ -50,8 +50,8 @@ To log in, use the following credentials:
 ## Troubleshooting
 If the application fails to start or authenticate users:
 
-1. Check the console logs for error messages.
-2. Verify that port `8080` is not in use by another application.
+1. Check the console logs for error messages.  
+2. Verify that port `8080` is not in use by another application.  
 3. Ensure the LDAP server is accessible and properly configured.
 
 ## License
@@ -61,4 +61,5 @@ This project is licensed under the MIT License. See the LICENSE file for details
 Contributions are welcome! Please fork the repository and submit a pull request with your improvements.
 
 ---
-Happy coding!
+Happy coding
+---
