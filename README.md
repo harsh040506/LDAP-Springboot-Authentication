@@ -16,7 +16,7 @@ This application demonstrates LDAP (Lightweight Directory Access Protocol) authe
 1. **Clone the Repository**:
    ```bash
    git clone <[repository-url](https://github.com/harsh040506/LDAP-Springboot-Authentication.git)>
-   cd <repository-folder>
+   cd <[repository-folder](https://github.com/harsh040506/LDAP-Springboot-Authentication/tree/main/LdapAuthentication)>
    ```
 
 2. **Build the Application**:
