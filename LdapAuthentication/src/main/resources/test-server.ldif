@@ -1,0 +1,87 @@
+dn: dc=springframework,dc=org
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: springframework
+
+dn: ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: ou=Freelancers,dc=springframework,dc=org
+objectclass: top
+objectclass: organizationalUnit
+ou: Freelancers
+
+dn: uid="Achilles Pelides",ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Achilles Pelides
+sn: Pelides
+uid: Achilles.Pelides
+userPassword: $2a$12$eYSGbfcCdluzij/L5vp0.OhvUqSlGYQJxKVmiGxtU4Ed65xe3TAzK
+
+dn: uid=User,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: User Name
+sn: Name
+uid: user.name
+userPassword: $2y$12$MieK9ylIjknDg.c9yzR55.GjuNdpv2/kjOMpGn6GA06ckj1ULlMRq
+
+dn: uid=User,ou=Freelancers,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Freelance User
+sn: User
+uid: freelance.user
+userPassword: $2y$12$czuVJKfDCGtDSK7AsZdrXujl5WqF.xMv/YBl6vsimnyfE62hJyq76
+
+dn: uid=perseus.eurymedon,ou=people,dc=springframework,dc=org
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Perseus Eurymedon
+sn: Perseus
+uid: Perseus Eurymedon
+userPassword: $2y$12$vRDarV.IAo10LtJeVLaDiOghMf0RlLF5A3n5eXHQMn6QvI9qbMe22
+
+dn: cn=developers,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid="Achilles Pelides",ou=people,dc=springframework,dc=org
+uniqueMember: uid=User,ou=people,dc=springframework,dc=org
+
+dn: cn=managers,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid="Achilles Pelides",ou=people,dc=springframework,dc=org
+
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=springframework,dc=org
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: submanagers
+ou: submanager
+uniqueMember: uid="Achilles Pelides",ou=people,dc=springframework,dc=org

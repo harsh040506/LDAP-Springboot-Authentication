@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #EDDFC6; /* Light mode background */
+            color: #191A23; /* Light mode text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212; /* Dark mode background */
+            color: #C0C2B0; /* Dark mode text */
+        }
+
+        .login-container {
+            background-color: #191A23;
+            color: #C0C2B0;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 450px;
+            transition: background-color 0.3s;
+        }
+
+        .login-title {
+            font-size: 28px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .profile-icon {
+            margin-right: 5px;
+            font-size: 24px;
+            color: #396B6E;
+        }
+
+        .login-form {
+            margin-top: 30px;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 10px 15px;
+            margin: 10px 0;
+            margin-left: -15px;
+            border: 1px solid #5A5A5A ;
+            border-radius: 4px;
+            background-color: #2A2B36;
+            color: #C0C2B0;
+            font-size: 16px;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: #396B6E;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #396B6E;
+            color: #C0C2B0;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-form button:hover {
+            background-color: #2F5659;
+        }
+
+        #toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #5A5A5A;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        #toggle-mode.dark-mode {
+            color: #A99985;
+        }
+    </style>
+</head>
+<body>
+<button id="toggle-mode" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i>
+    <i class="fas fa-sun" style="display: none;"></i>
+</button>
+
+<div class="login-container">
+    <h1 class="login-title"><i class="fas fa-user-circle profile-icon"></i>Login</h1>
+    <form class="login-form" th:action="@{/login}" method="post">
+        <div>
+            <input type="text" name="username" placeholder="Username" required>
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button type="submit">Sign In</button>
+    </form>
+</div>
+
+<script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        const moonIcon = document.querySelector('.fa-sun');
+        const sunIcon = document.querySelector('.fa-moon');
+
+        moonIcon.style.display = moonIcon.style.display === 'none' ? 'inline-block' : 'none';
+        sunIcon.style.display = sunIcon.style.display === 'none' ? 'inline-block' : 'none';
+    }
+</script>
+</body>
+</html>
