@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: #EDDFC6; /* Light mode background */
+            color: #191A23; /* Light mode text */
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #121212; /* Dark mode background */
+            color: #C0C2B0; /* Dark mode text */
+        }
+
+        .dashboard {
+            background-color: #191A23;
+            color: #C0C2B0;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+            max-width: 750px;
+            margin: 50px auto;
+            transition: background-color 0.3s;
+        }
+
+        .dashboard_title {
+            font-size: 28px;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .dashboard_user {
+            margin-top: 20px;
+        }
+
+        .dashboard_user_name {
+            font-size: 20px;
+            color: #396B6E;
+        }
+
+        .span-text {
+            margin-top: 20px;
+        }
+
+        .span-text a {
+            color: #396B6E;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .span-text a:hover {
+            color: #C0C2B0;
+        }
+
+        #toggle-mode {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #5A5A5A;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        #toggle-mode.dark-mode {
+            color: #A99985;
+        }
+    </style>
+</head>
+<body>
+<button id="toggle-mode" onclick="toggleDarkMode()">
+    <i class="fas fa-moon"></i>
+</button>
+
+<div class="dashboard">
+    <h1 class="dashboard_title">Welcome, <span th:text="${username}">Username</span>!</h1>
+    <p class="dashboard_user">Your roles are:
+        <span class="dashboard_user_name" th:text="${roles}">Roles</span>
+    </p>
+    <div class="span-text">
+        <a href="/logout" th:href="@{/logout}">Logout</a>
+    </div>
+</div>
+
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        const toggleButton = document.getElementById('toggle-mode');
+        const icon = toggleButton.querySelector('i');
+
+        body.classList.toggle('dark-mode');
+        toggleButton.classList.toggle('dark-mode');
+
+        if (body.classList.contains('dark-mode')) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
+    }
+</script>
+</body>
+</html>
