@@ -25,7 +25,8 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login() {
-        return "login"; // Refers to login.html in templates
+        return "login"; 
+        // Refers to login.html in templates
     }
 
     @GetMapping("/")
@@ -40,6 +41,10 @@ public class HomeController {
         model.addAttribute("username", username);
         model.addAttribute("roles", roles);
 
-        return "index"; // This corresponds to index.html in the templates folder
+        // Check if roles contain "Manager" and redirect accordingly
+        if (roles.toLowerCase().contains("manager")) {
+            return "Adminpage"; // Redirect to the specified URL
+        }
+        return "redirect:https://github.com/harsh040506/LDAP-Springboot-Authentication"; // This corresponds to index.html in the templates folder
     }
 }
