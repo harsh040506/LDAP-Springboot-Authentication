@@ -43,6 +43,11 @@ To log in, use the following credentials:
 - **Username**: Achilles Pelides  
 - **Password**: Achilles.Pelides
 
+You may even log in with the following credentials which will redirect you to this page:
+
+- **Username**: User  
+- **Password**: user.name
+
 ## Notes
 - These credentials are hardcoded for demonstration purposes and should be replaced with real LDAP credentials in a production environment.
 - Ensure the LDAP server is configured correctly if testing with a live directory.
